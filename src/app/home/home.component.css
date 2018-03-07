@@ -1,0 +1,78 @@
+#articleImageName{
+	display: flex;
+	justify-content: flex-start;
+}
+
+#containerBaseInfo{
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	padding-right: 10px;
+	padding-bottom: 20px;
+	margin: 0px auto 20px auto;
+}
+
+#divName{
+	margin-bottom: 5px;
+}
+
+#divSub{
+	color: #490D27;
+	font-size: 16pt;
+	margin-bottom: 10px;
+}
+
+section{
+	/*Dovrebbe vincere questa regola essendo flex tutte le section (regola generale inserita in Common)*/
+	flex-direction: column;
+}
+
+#socialDiv{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	max-width: 400px;
+}
+
+
+
+
+/***********************************************ARTICLE 2******************************************/
+.titoloParagrafo{
+	color:  #490D27;
+	font-size: 18pt;
+	margin: 30px 0px 0px 40px;
+}
+
+p{
+	color: rgb(150, 150, 129);
+	font-size: 12pt;
+	margin: 5px 40px 20px 40px;
+	padding: 0px 0px 20px 0px;
+	border-bottom: 2px solid #EEE;
+}
+
+.tableStyle{
+	margin: 10px auto;
+	border: thin solid #EEE;
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+}
+
+.rowTable{
+	display: flex;
+	flex-direction: row;
+}
+
+.colonna1{
+	flex-basis: 20%
+}
+
+.colonna2{
+	flex-basis: 80%;
+}
+.socialIcon{
+	width: 30px;
+	height: 30px;
+}

@@ -1,3 +1,54 @@
-<p>
-  home works!
-</p>
+<section>
+
+    <!-- Con questo primo article identifico la nome, cognome, 
+    immagine profilo ed eventuali profili social. -->
+    <article id="articleImageName">
+      <figure>
+        <img id="idFigure" class="imageClass" src="{{persona.picture.large}}">				
+      </figure>
+
+      <div id="containerBaseInfo">
+        <div id="divName" class="titleStyle capitalizzazione"></div>
+        <div id="divSub">Software Engineer</div>	
+        <div id="socialDiv">
+          <a href="#" title="Facebook.it"><img src="../assets/facebook.png" class="socialIcon"></a>
+          <a href="#" title="Instagram.com"><img src="../assets/insta.png" class="socialIcon"></a>
+          <a href="#" title="Linkedin.com"><img src="../assets/linke.png" class="socialIcon"></a>
+          <a href="#" title="Twitter.com"><img src="../assets/twitter.png" class="socialIcon"></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Con il secondo article identifico le informazioni sulla persona
+    in forma tabellare prima e poi un riassunto dello stesso. -->
+    <article>
+      <div id="idTabella" class="tableStyle">
+        <div class="rowTable">
+          <div class="colonna1" id="columnAge">Età</div>
+          <div class="colonna2" id="dataAge">{{persona.dob}}</div>
+        </div>
+        <div class="rowTable">
+          <div class="colonna1" id="columnAddress">Indirizzo</div>
+          <div class="colonna2" id="dataAddress">{{persona.location.street}}</div>
+        </div>
+        <div class="rowTable">
+          <div class="colonna1" id="columnEmail">E-Mail</div>
+          <div class="colonna2" id="dataEmail">{{persona.email}}</div>						
+        </div>
+        <div class="rowTable">
+          <div class="colonna1" id="columnPhone">Telefono</div>
+          <div class="colonna2" id="dataPhone">{{persona.phone}}</div>						
+        </div>
+        <div class="rowTable">
+          <div class="colonna1" id="columnCell">Cellulare</div>
+          <div class="colonna2" id="dataMobile">{{persona.cell}}</div>						
+        </div>
+      </div>
+
+      <div class="titoloParagrafo">About me</div>
+      <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam odit vel expedita sequi dignissimos amet ullam dolorem illum deleniti impedit. Veniam officiis hic quo numquam vitae laborum eius consequuntur non.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam odit vel expedita sequi dignissimos amet ullam dolorem illum deleniti impedit. Veniam officiis hic quo numquam vitae laborum eius consequuntur non.
+      </p>
+    </article>
+  </section>

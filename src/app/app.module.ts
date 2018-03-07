@@ -12,6 +12,8 @@ import { AboutComponent } from './about/about.component';
 import { ErrorComponent } from './error/error.component';
 import { ContextService } from './services/context.service';
 import { VideoComponent } from './video/video.component';
+import { SocialService } from './services/social.service';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -25,13 +27,14 @@ import { VideoComponent } from './video/video.component';
     GalleryComponent,
     AboutComponent,
     ErrorComponent,
-    VideoComponent
+    VideoComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ContextService],
+  providers: [ContextService, SocialService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -23,13 +23,11 @@
   .HolyGrail-ads {
     border: 3px solid black;
     font-size: 1.5rem;
-    background: #cc6699;
-    color: white;
+    color: black;
     padding: 0.5rem;
   }
   
   
   .HolyGrail-content {
-    background: #cc9966;
   }
   

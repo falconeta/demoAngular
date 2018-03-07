@@ -1,5 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { ContextService } from '../services/context.service';
+import { SocialService } from '../services/social.service';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +9,17 @@ import { ContextService } from '../services/context.service';
 })
 export class HeaderComponent implements OnInit {
   @Input() titolo: '';
-  constructor(private contesto: ContextService) { }
+
+  private notificheFacebook: number;
+  private notificheTwitter: number;
+
+  constructor(private contesto: ContextService, 
+              private social: SocialService) {
+  }
   ngOnInit() {
     this.titolo = this.contesto.getTitle();
+    this.notificheFacebook = this.social.getFacebookNotifications();
+    this.notificheTwitter = this.social.getTwitterNotifications();
   }
 
 }

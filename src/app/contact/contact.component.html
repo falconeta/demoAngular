@@ -1,0 +1,32 @@
+<form class="form-horizontal">
+  <fieldset>
+    <legend>Legend</legend>
+    <div class="form-group">
+      <label for="inputName" class="col-lg-2 control-label">Nome</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputName" placeholder="Name" value="{{persona.nome}}">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputSurname" class="col-lg-2 control-label">Cognome</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputSurname" placeholder="Cognome" value="{{persona.cognome}}">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputMail" class="col-lg-2 control-label">E-Mail</label>
+      <div class="col-lg-10">
+        <input type="email" class="form-control" id="inputMail" placeholder="E-Mail" value="{{persona.mail}}">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="textArea" class="col-lg-2 control-label">Commento</label>
+      <div class="col-lg-10">
+        <textarea class="form-control" rows="3" id="textArea"></textarea>
+      </div>
+    </div>
+  </fieldset>
+</form>
