@@ -1,0 +1,35 @@
+.HolyGrail {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .HolyGrail-body {
+    display: flex;
+    flex-grow: 1;
+  }
+  .HolyGrail-nav {
+    order: -1;
+  }
+  .HolyGrail-content,
+  .HolyGrail-nav, 
+  .HolyGrail-ads {
+    flex: 1 0 20%;
+  }
+  .HolyGrail-content {
+    flex-basis: 60%;
+  }
+  .HolyGrail-content,
+  .HolyGrail-nav, 
+  .HolyGrail-ads {
+    border: 3px solid black;
+    font-size: 1.5rem;
+    background: #cc6699;
+    color: white;
+    padding: 0.5rem;
+  }
+  
+  
+  .HolyGrail-content {
+    background: #cc9966;
+  }
+  
