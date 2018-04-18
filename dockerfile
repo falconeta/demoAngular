@@ -1,23 +1,34 @@
-# Client App
-FROM johnpapa/angular-cli as client-app
-LABEL authors="John Papa"
-WORKDIR /usr/src/app
-COPY ["package.json", "npm-shrinkwrap.json*", "./"]
-RUN npm install --silent
+### STAGE 1: Build ###
+
+# We label our stage as 'builder'
+FROM node:8-alpine as builder
+
+COPY package.json package-lock.json ./
+
+RUN npm set progress=false && npm config set depth 0 && npm cache clean --force
+
+## Storing node modules on a separate layer will prevent unnecessary npm installs at each build
+RUN npm i && mkdir /ng-app && cp -R ./node_modules ./ng-app
+
+WORKDIR /ng-app
+
 COPY . .
-RUN ng build --prod --build-optimizer
 
-# Node server
-FROM node:8.9-alpine as node-server
-WORKDIR /usr/src/app
-COPY ["package.json", "npm-shrinkwrap.json*", "./"]
-RUN npm install --production --silent && mv node_modules ../
-COPY /src/server /usr/src/app
+## Build the angular app in production mode and store the artifacts in dist folder
+RUN $(npm bin)/ng build --prod --build-optimizer
 
-# Final image
-FROM node:8.9-alpine
-WORKDIR /usr/src/app
-COPY --from=node-server /usr/src /usr/src
-COPY --from=client-app /usr/src/app ./
-EXPOSE 3000
-CMD ["node", "index.js"]
+
+### STAGE 2: Setup ###
+
+FROM nginx:1.13.3-alpine
+
+## Copy our default nginx config
+COPY nginx/default.conf /etc/nginx/conf.d/
+
+## Remove default nginx website
+RUN rm -rf /usr/share/nginx/html/*
+
+## From 'builder' stage copy over the artifacts in dist folder to default nginx public folder
+COPY --from=builder /ng-app/dist /usr/share/nginx/html
+
+CMD ["nginx", "-g", "daemon off;"]
