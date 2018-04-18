@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Persona } from '../models/Persona';
+import { Persona } from '../models/persona';
 import { Result, RootObject } from '../models/randomuser';
 
 @Injectable()
