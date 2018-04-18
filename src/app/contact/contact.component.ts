@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Persona } from '../models/Persona';
+import { Persona } from '../models/persona';
 import { ContextService } from '../services/context.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { ContextService } from '../services/context.service';
 export class ContactComponent implements OnInit {
   public persona: Persona;
 
-  constructor(private contesto: ContextService) { 
+  constructor(private contesto: ContextService) {
   }
 
   ngOnInit() {
