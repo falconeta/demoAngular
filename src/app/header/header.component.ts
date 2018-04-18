@@ -10,10 +10,10 @@ import { SocialService } from '../services/social.service';
 export class HeaderComponent implements OnInit {
   @Input() titolo: '';
 
-  private notificheFacebook: number;
-  private notificheTwitter: number;
+  public notificheFacebook: number;
+  public notificheTwitter: number;
 
-  constructor(private contesto: ContextService, 
+  constructor(private contesto: ContextService,
               private social: SocialService) {
   }
   ngOnInit() {
